@@ -1,7 +1,13 @@
-import numpy
+from sklearn import datasets
+from sklearn.linear_model import LogisticRegression
 
-ages = [5,31,43,48,50,41,7,11,15,39,80,82,32,2,8,6,25,36,27,61,31]
+iris = datasets.load_iris()
 
-x = numpy.percentile(ages, 90)
+X = iris['data']
+y = iris['target']
 
-print(x)
+logit = LogisticRegression(max_iter = 10000)
+
+print(logit.fit(X,y))
+
+print(logit.score(X,y))
