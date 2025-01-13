@@ -1,7 +1,6 @@
-from django.contrib import admin
-from django.urls import include, path
+from django.http import HttpResponse
+from django.template import loader
 
-urlpatterns = [
-    path('', include('members.urls')),
-    path('admin/', admin.site.urls),
-]
+def members(request):
+  template = loader.get_template('myfirst.html')
+  return HttpResponse(template.render())
