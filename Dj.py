@@ -1,6 +1,5 @@
-from django.http import HttpResponse
-from django.template import loader
+from django.db import models
 
-def members(request):
-  template = loader.get_template('myfirst.html')
-  return HttpResponse(template.render())
+class Member(models.Model):
+  firstname = models.CharField(max_length=255)
+  lastname = models.CharField(max_length=255)
