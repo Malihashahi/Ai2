@@ -1,5 +1,7 @@
-from django.db import models
+from django.urls import path
 
-class Member(models.Model):
-  firstname = models.CharField(max_length=255)
-  lastname = models.CharField(max_length=255)
+from . import views
+
+urlpatterns = [
+    path("", views.index, name="index"),
+]
