@@ -12,7 +12,7 @@ def members(request):
   
 def details(request, id):
   mymember = Member.objects.get(id=id)
-  template = loader.get_template('details.html')
+  template = loader.get_template('home.html')
   context = {
     'mymember': mymember,
   }
